@@ -20,6 +20,7 @@ function setup() {
       sound.play();
     }
   });
+  strokeWeight(15);
   text('click to see the sound interaction', 25, 25);
 }
 
@@ -27,18 +28,18 @@ function draw(){
  col.r = random(0, 255);
  col.g = random(0, 255);
  col.b = random(0, 255);
-strokeWeight(map(size,0,1,1,30));
+ noFill();
 // fill(col.r, col.g, col.b);
  var level = amplitude.getLevel();
- var size = map(level, 0, 1, 0, 500);
-  for (var x = 30; x < width ; x++) {
-  fill(col.r, col.g, col.b);
+ var size = map(level, 0, 1, 0, 700);
+ 
+  stroke(col.r, 100, 100);
   ellipse(width/2, height/2, size, size);
-  }
-   if(size>200) {
-    background(col.g);
+  
+   if(size > 200) {
+    background(col.r,100, 100);
   } else {
-    background(255,100);
+    background(255,10);
   }
 };
 
