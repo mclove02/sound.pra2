@@ -1,26 +1,27 @@
 var sound, amplitude, young;
 
 var col = {
-  r: 100,
-  g: 50,
-  b: 100
+  r: 0,
+  g: 0,
+  b: 0
 }
 
 function preload() {
- sound = loadSound("iphone_6_plus.mp3");
+ sound = loadSound("allatsee.mp3");
 }
 
 function setup() {
   young = createCanvas(windowWidth, windowHeight);
   amplitude = new p5.Amplitude();
-  young.mouseClicked(function() {
-    if(sound.isPlaying()) {
-      sound.stop();
-    } else {
-      sound.play();
-    }
-  });
-  strokeWeight(15);
+  // young.mouseClicked(function() {
+  //   if(sound.isPlaying()) {
+  //     sound.stop();
+  //   } else {
+  //     sound.play();
+  //   }
+  // });
+  sound.play();
+  // strokeWeight(15);
   text('click to see the sound interaction', 25, 25);
 }
 
@@ -31,15 +32,17 @@ function draw(){
  noFill();
 // fill(col.r, col.g, col.b);
  var level = amplitude.getLevel();
- var size = map(level, 0, 1, 0, 700);
+ var size = map(level, 0, 1, 0, 1000);
  
-  stroke(col.r, 100, 100);
-  ellipse(width/2, height/2, size, size);
+  // stroke(col.r, 100, 100);
+  background(size,size,120);
+  // ellipse(width/2, height/4, size/2, size/2);
+  // ellipse(width/4, height/2, size, size);
   
-   if(size > 200) {
-    background(col.r,100, 100);
-  } else {
-    background(255,10);
-  }
+  // if(size > 200) {
+  //   background(col.r,100, 50);
+  // } else {
+  //   background(255,10);
+  // }
 };
 
