@@ -36,7 +36,7 @@ function draw(){
  noStroke();
   // stroke(col.r, 100, 100);
 //  background(size,200);
-   ellipse(width/2, height/4, size/2, size/2);
+   ellipse(width/2, height/2, size/2, size/2);
 //   ellipse(width/4, height/2, size, size);
   
    if(size > 200) {
